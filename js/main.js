@@ -161,7 +161,7 @@ window.onload = function(){     //DOM과 img등이 모두 로드된 후 실행
                 wrap.classList.remove('black');
             }
         }
-        if(scrollY >= winHeight * 1 + 1 && scrollY < winHeight * 2){
+        if(scrollY >= winHeight * 1 && scrollY < winHeight * 2){
             slidingA.forEach(function(el){
                 el.classList.remove('on');
             });
@@ -174,7 +174,7 @@ window.onload = function(){     //DOM과 img등이 모두 로드된 후 실행
                 wrap.classList.remove('black');
             }
         }
-        if(scrollY >= winHeight * 2 + 1 && scrollY < winHeight * 3){
+        if(scrollY >= winHeight * 2 && scrollY < winHeight * 3){
             slidingA.forEach(function(el){
                 el.classList.remove('on');
             });
@@ -187,7 +187,7 @@ window.onload = function(){     //DOM과 img등이 모두 로드된 후 실행
                 wrap.classList.remove('black');
             }
         }
-        if(scrollY >= winHeight * 3 + 1 && scrollY < winHeight * 4){
+        if(scrollY >= winHeight * 3 && scrollY < winHeight * 4){
             slidingA.forEach(function(el){
                 el.classList.remove('on');
             });
@@ -200,7 +200,7 @@ window.onload = function(){     //DOM과 img등이 모두 로드된 후 실행
                 wrap.classList.remove('black');
             }
         }
-        if(scrollY >= winHeight * 4 + 1 && scrollY <= winHeight * 5 || scrollY === footerTopScroll){
+        if(scrollY >= winHeight * 4 && scrollY <= winHeight * 5 || scrollY === footerTopScroll){
             slidingA.forEach(function(el){
                 el.classList.remove('on');
             });

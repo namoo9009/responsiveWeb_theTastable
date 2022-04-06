@@ -3,7 +3,7 @@
 
 ### 개요
 - 사용 기술 : HTML, CSS, banila Javascript
-- 결과물 url : https://namoo9009.github.io/responsiveWeb_thetaste/
+- 결과물 url : https://namoo9009.github.io/responsiveWeb_theTastable/
 - 클론코딩 웹 : 더테이스터블 메인 페이지(http://www.thetastable.com/kr/)
 
 <br/>

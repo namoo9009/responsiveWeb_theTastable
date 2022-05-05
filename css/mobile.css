@@ -1,16 +1,10 @@
 /* mobide */
 @media screen and (max-width:767px){
-
-/* common */
+/* 공통 */
 html{width: 100%;height: 100%;margin: 0;padding: 0;}
 body{width: 100%;height: 100%;font-family: 'Noto Sans', sans-serif;font-family: 'Noto Sans KR', sans-serif;font-weight: 300; color:#666;letter-spacing: -0.5px;word-break: keep-all;}
 a{text-decoration: none;color: #666;}
 *{box-sizing: border-box;}
-
-
-/* 로딩화면 */
-.loading{display: block;opacity: 1;position: relative; width: 100%;background: #041a26;pointer-events: none;}
-.loading_inner h1{position: relative;top: 50%; margin: 0 auto; width: 187px;height: 41px; background: url(../image/img_logo.png)no-repeat 0 0;text-indent: -9999px;overflow: hidden;}
 
 /* wrap */
 #wrap{width: 100%;}
@@ -18,76 +12,81 @@ a{text-decoration: none;color: #666;}
 /* header */
 #header{z-index: 50; position: fixed; width: 100%;height: 80px;}
 .header_wrap{z-index: 50;opacity: 1; position: absolute;left: 0; top: 0;width: 100%;height: 100%;border-bottom: 1px solid rgba(255, 255, 255, 0.3);transition: opacity 0.4s ease-in-out;}
-/* 로고 */
-.header_wrap h1{ position: absolute;left: 20px;top: 50%;margin-top: -20px; width: 187px;height: 41px; background: url(../image/img_logo.png)no-repeat 0 0;text-indent: -9999px;overflow: hidden;}
+/* header_로고 */
+.header_wrap h1{ position: absolute;left: 20px;top: 50%;margin-top: -20px; width: 187px;height: 41px; background: url(../image/img_logo.png) no-repeat 0 0;text-indent: -9999px;overflow: hidden;}
 .header_wrap h1 a{display: block;width: 100%;height: 100%;}
-/* 주메뉴 */
+/* header_주메뉴 */
 .header_wrap .gnb{display: none;}
-
-/* 검색버튼 */
+/* header_주메뉴 배경 */
+.header_wrap .gnb_bg{ display: none;}
+/* 주메뉴 호버시 */
+.allmenu_wrap.on{display: block;}
+/* header_검색버튼 */
 .header_wrap .srch_box{position: absolute;right: 95px;top: 50%;margin-top: -20px;}
 .header_wrap .srch_box input{z-index: 10;width: 100px; font-size: 14px; border: none;outline: none;border-bottom: 1px solid rgba(255, 255, 255, 0.3);background: none;padding: 0 10px;line-height: 38px;color: #fff;transition: all 0.3s ease-in-out;}
 .header_wrap .srch_box button{position: absolute;right: -30px; top: 5px; width: 32px;height: 32px;border-radius: 50%; border: none; outline: none; text-indent: -9999px;overflow: hidden;background:rgba(255, 255, 255, 0.2) url(../image/icon_search.png)no-repeat 50% 50%;cursor: pointer;}
 .header_wrap .srch_box button.on{background: #fff url(../image/icon_search_on.png) no-repeat 50% 50%;}
-
-
-/* 햄버거버튼 */
+/* header_햄버거버튼 */
 .ham_box{position: absolute;right: -10px;top: 0px; width: 90px;height: 90px;cursor: pointer;}
-.ham{position: relative;left: 50%;top: 50%;transform: translateX(-50%); width: 30px;height: 1px;background-color: #fff;box-shadow: 0 8px 0 #fff, 0 -8px 0 #fff;}
-#wrap #header .ham.on{background:none; box-shadow: 0 0 0 #fff, 0 0 0 #fff}
-#wrap #header .ham::after{display: none; position: absolute;left: 15px;top: -20px; content: "";width: 1px;height: 35px;background-color: #999;transform: rotate(-45deg);}
-#wrap #header .ham::before{display: none; position: absolute;left: 15px;top: -20px; content: "";width: 1px;height: 35px;background-color: #999;transform: rotate(45deg);}
-#wrap #header .ham.on::after{display: block;}
-#wrap #header .ham.on::before{display: block;}
-/* 주메뉴 배경 */
-.header_wrap .gnb_bg{ display: none;}
+.ham_box div{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); width: 35px; height: 20px;}
+.ham_box div::after{opacity: 0; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); content: "menu"; color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase;}
+.ham_box div span{position: absolute; width: 100%;height: 1px;background-color: #fff; transition: 0.3s;}
+.ham_box div span:nth-of-type(1){left: 0; top: 0;}
+.ham_box div span:nth-of-type(2){top: 50%;}
+.ham_box div span:nth-of-type(3){right: 0; bottom: 0;}
+/* header_햄버거 버튼 호버시 */
+.ham_box:hover div::after{opacity: 1;}
+.ham_box:hover div span:nth-of-type(1){left: 0; width: 20px;}
+.ham_box:hover div span:nth-of-type(2){width: 0;}
+.ham_box:hover div span:nth-of-type(3){left: auto; right: 0; width: 20px;}
+#wrap.hamBtnOn .ham_box:hover div span{width: 100%;}
+/* header_햄버거 버튼 클릭시 버튼모양이 X로 변경 */
+#wrap.hamBtnOn .ham_box div::after{opacity: 0;}
+#wrap.hamBtnOn .header_wrap .ham_box div span:nth-of-type(1){top: 50%; transform: rotate(45deg);}
+#wrap.hamBtnOn .header_wrap .ham_box div span:nth-of-type(2){display: none;}
+#wrap.hamBtnOn .header_wrap .ham_box div span:nth-of-type(3){top: 50%; transform: rotate(-45deg);}
+/* header_페이지 이동할때 섹션의 배경색에 따라 헤더의 글자색 변경, 
+햄버거 버튼 클릭시 header의 로고, 검색영역 검은색으로 변경*/
+#wrap.black .header_wrap,
+#wrap.hamBtnOn .header_wrap{background-color: rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
+#wrap.black .header_wrap h1,
+#wrap.hamBtnOn .header_wrap h1{background-image: url(../image/img_logo_f.png);} 
+#wrap.black .header_wrap .gnb > ul > li > a,
+#wrap.hamBtnOn .header_wrap .gnb > ul > li > a{color: #333;}
+#wrap.black .header_wrap .srch_box input,
+#wrap.hamBtnOn .header_wrap .srch_box input{border-bottom-color: #bbb;color: #555;}
+#wrap.black .header_wrap .srch_box button,
+#wrap.hamBtnOn .header_wrap .srch_box button{background-image: url(../image/icon_search.png);background-color: #bbb;}
+#wrap.black .header_wrap .ham_box span,
+#wrap.hamBtnOn .header_wrap .ham_box span{background-color: #666;}
+#wrap.black aside,
+#wrap.hamBtnOn aside{color: #666;border-left-color: #ddd;background-color: #fff;}
+#wrap.black aside a,
+#wrap.hamBtnOn aside a{color: #666;}
+#wrap.black aside .scroll p:last-child,
+#wrap.hamBtnOn aside .scroll p:last-child{border-color: #666;}
+#wrap.black aside .scroll p:last-child::after,
+#wrap.hamBtnOn aside .scroll p:last-child::after{background-color: #666;}
+#wrap.black .sliding_name,
+#wrap.hamBtnOn .sliding_name{color: #999;}
+#wrap.black .sliding .pages a span,
+#wrap.hamBtnOn .sliding .pages a span{background-color: #666;}
+#wrap.black .sliding .pages a.on span,
+#wrap.hamBtnOn .sliding .pages a.on span{background-color: transparent;border-color: #666;}
 
-/* allmenu 새로운 화면 */
+/* allmenu*/
 .allmenu_wrap{display: none; z-index: 30; position: absolute; width: 100%;height: 100vh; background: #fff;}
 .allmenu_wrap::after{display: none;}
 .allmenu_wrap .sub_nav{position: relative;display: inline-block; left: 170px;top: 150px;font-size: 30px;line-height: 1.8;}
 .allmenu_wrap .sub_nav a{color: #333;}
+/* allmenu_햄버거버튼 클릭시 allmenu 화면 보여짐 */
 .allmenu_wrap.on{display: block;}
-
-/* 주메뉴 호버시 */
-.allmenu_wrap.on{display: block;}
-
-
-#wrap.black .header_wrap,
-#wrap.hamBlack .header_wrap{background-color: rgba(255, 255, 255, 0.8); border-bottom-color: #ddd;}
-/* #wrap.black #header{background-color: #fff;} */
-#wrap.black .header_wrap h1,
-#wrap.hamBlack .header_wrap h1{background-image: url(../image/img_logo_f.png);} 
-#wrap.black .header_wrap .gnb > ul > li > a,
-#wrap.hamBlack .header_wrap .gnb > ul > li > a{color: #333;}
-#wrap.black .header_wrap .srch_box input,
-#wrap.hamBlack .header_wrap .srch_box input{border-bottom-color: #bbb;color: #555;}
-#wrap.black .header_wrap .srch_box button,
-#wrap.hamBlack .header_wrap .srch_box button{background-image: url(../image/icon_search.png);background-color: #bbb;}
-#wrap.black .header_wrap .ham_box .ham,
-#wrap.hamBlack .header_wrap .ham_box .ham{background-color: #666;box-shadow: 0 10px 0 #666, 0 -10px 0 #666;;}
-#wrap.black aside,
-#wrap.hamBlack aside{color: #666;border-left-color: #ddd;background-color: #fff;}
-#wrap.black aside a,
-#wrap.hamBlack aside a{color: #666;}
-#wrap.black aside .scroll p:last-child,
-#wrap.hamBlack aside .scroll p:last-child{border-color: #666;}
-#wrap.black aside .scroll p:last-child::after,
-#wrap.hamBlack aside .scroll p:last-child::after{background-color: #666;}
-#wrap.black .sliding_name,
-#wrap.hamBlack .sliding_name{color: #999;}
-#wrap.black .sliding .pages a span,
-#wrap.hamBlack .sliding .pages a span{background-color: #666;}
-#wrap.black .sliding .pages a.on span,
-#wrap.hamBlack .sliding .pages a.on span{background-color: transparent;border-color: #666;}
-
 
 /* aside */
 aside{display: none;}
 
-/* 메인배너 */
+/* 메인비쥬얼 */
 .main_visual{z-index: 10;position: relative; display: block;width: 100%;height: 100vh;}
-/* 비디오 크기를 100%로 설정하면 원본 비율에 맞게 적용되어 현재 화면보다 커질 수 있음. */
 .main_visual video{z-index: 9; width: 100%;height: 100vh; object-fit: cover;}
 .main_visual div{position: absolute;left: 50px;bottom: 40px;line-height: 1.3;overflow: hidden;}
 .main_visual div p:first-child,
@@ -99,52 +98,40 @@ aside{display: none;}
 .main_visual.on div p:nth-child(2){opacity: 1; transform: translateX(0);}
 .main_visual.on div p:last-child{opacity: 1;transform: translateY(0);}
 
-
 /* 사업소개 */
-/* common */
+/* 사업소개_공통 */
 .content1{display: block;width: 100%;height: 1200px;}
 .content1 div{position: absolute;left: 50%;top: -20px; margin-left: -150px; width: 300px;color: #fff; text-align: center;}
 .content1 ul li div h4{display: block; margin-top: 20px; font-size: 18px;font-weight: 300;}
 .content1 ul li div h3{margin: 0 0 30px; font-size: 24px;font-weight: 500;}
-/* 배경 이미지 */
+/* 사업소개_배경 이미지 */
 .content1 ul{width: 100%; height: 100%;}
-/*li가 opacity:0, scale(0,1)이었다가 스크롤탑이 section에 도착하면 on이 붙고  li가 opacity: 1, scale(1,1)이 된다. 기존의 li에 transition을 적용하여 서서히 나타나게 한다.*/
 .content1 ul li{opacity: 1; width: 100%;height: calc(100% / 3); position: relative;background-repeat: no-repeat;background-position: 0 0;background-size: cover;}
-/* 스크롤탑이 섹션에 도착하면 원래 배경의 글자박스가 위로 이동하며 서서히 나타난다. */
-.content1 ul li:nth-child(1) div:first-child{opacity: 0; top: 35%; transform: translateY(200px);transition: all 1s ease-in-out;}
-.content1 ul li:nth-child(2) div:first-child{opacity: 0; top: 35%; transform: translateY(200px);transition: all 1s 0.3s ease-in-out;}
-.content1 ul li:nth-child(3) div:first-child{opacity: 0; top: 35%; transform: translateY(200px);transition: all 1s 0.6s ease-in-out;}
-.content1.on ul li:nth-child(1) div:first-child{opacity: 1;transform: translateY(0);}
-.content1.on ul li:nth-child(2) div:first-child{opacity: 1;transform: translateY(0);}
-.content1.on ul li:nth-child(3) div:first-child{opacity: 1;transform: translateY(0);}
+.content1 ul li::after{pointer-events: none; opacity: 0; position: absolute;left: 0;top: 0; content: "";width: 100%;height: 100%;background-color: #F37321;transform: scale(0);}
 .content1 ul li:nth-child(1){background-image: url(../image/img_section2_1.jpg);}
 .content1 ul li:nth-child(2){background-image: url(../image/img_section2_2.jpg);}
 .content1 ul li:nth-child(3){background-image: url(../image/img_section2_3.jpg);}
-/* 호버효과*/
-/* 호버시 새로운 배경이 서서히 커지면서 나타나고, 글씨가 몇초뒤에 서서히 위로 이동하며 나타난다. 그리고 마우스 아웃하면 배경과 글씨는 바로 사라진다.->animation사용. transform은 효과 다시 되풀이됨. */
-/* 
-point1.호버시 나타나는 배경과 글씨는 또다른 호버로 인식된다. 그래서 기존의 배경에서 자동으로 마우스 아웃되는 현상이 발생하는데, 이를 방지하기 위해 호버시 나타나는 배경과 글씨에 pointer-events:none;을 적용한다. 
-*/
-.content1 ul li::after{pointer-events: none; opacity: 0; position: absolute;left: 0;top: 0; content: "";width: 100%;height: 100%;background-color: #F37321;transform: scale(0);}
-.content1 ul li:hover::after{animation: bgScale 0.5s ease-in-out 1;opacity: 0.8; transform: scale(1);}
-/* 호버시 글자 0.5초 뒤에 나오고 마우스 아웃하면 바로 사라지는 효과*/
+.content1 ul li:nth-child(1) div:first-child{opacity: 0; top: 35%; transform: translateY(200px);transition: all 1s ease-in-out;}
+.content1 ul li:nth-child(2) div:first-child{opacity: 0; top: 35%; transform: translateY(200px);transition: all 1s 0.3s ease-in-out;}
+.content1 ul li:nth-child(3) div:first-child{opacity: 0; top: 35%; transform: translateY(200px);transition: all 1s 0.6s ease-in-out;}
 .content1 ul li div:last-child{pointer-events: none; z-index: 1; opacity: 0; top: 35%;}
+.content1 ul li div:last-child a{display: block; color: #fff;padding-top: 30px;}
+/* 사업소개_호버시 글자 0.5초 뒤에 나오고 마우스 아웃하면 바로 사라지는 효과*/
+.content1 ul li:hover::after{animation: bgScale 0.5s ease-in-out 1;opacity: 0.8; transform: scale(1);}
 .content1 ul li:hover div:last-child{animation-name:  fontAni;animation-duration: 0.8s;animation-delay: 0.4s;animation-fill-mode: forwards;}
 .content1 ul li:hover div:first-child{display: none;}
-
-/* .content1 ul li.opcity div:last-child{opacity: 1;} */
-
-.content1 ul li div:last-child a{display: block; color: #fff;padding-top: 30px;}
-
 @keyframes bgScale{
     0%{opacity: 0; transform: scale(0);}
     100%{opacity: 0.8; transform: scale(1);}
 }
 @keyframes fontAni{
     0%{opacity: 0; top: 35%;}
-    100%{opacity: 1; top: 25%;}
+    100%{opacity: 1; top: 15%;}
 }
-
+/* 사업소개_스크롤탑이 섹션에 도착하면 원래 배경의 글자박스가 위로 이동하며 서서히 나타난다. */
+.content1.on ul li:nth-child(1) div:first-child{opacity: 1;transform: translateY(0);}
+.content1.on ul li:nth-child(2) div:first-child{opacity: 1;transform: translateY(0);}
+.content1.on ul li:nth-child(3) div:first-child{opacity: 1;transform: translateY(0);}
 
 /* 서비스 소개  */
 .content2{width: 100%;height: 100%; text-align: center;padding-top: 100px;}
@@ -153,20 +140,19 @@ point1.호버시 나타나는 배경과 글씨는 또다른 호버로 인식된�
 .content2 div h3{color: #F37321;font-weight: bold;}
 .content2 div h2{margin: 0 0 20px; font-size: 42px;color: #333;font-weight: 300;}
 .content2 div p{color: #333;letter-spacing: -1px;font-size: 15px;}
-/* 컨텐츠 리스트 */
+/* 서비스 소개_리스트 */
 .content2 ul{padding-top: 20px; display: flex;justify-content: center;flex-wrap: wrap;}
 .content2 ul li{position: relative;width: 130px;padding-top: 180px;margin: 0 20px;}
 .content2 ul li span{font-weight: 500;font-size: 18px;color: #333;}
 .content2 ul li span strong{font-size: 30px;font-weight: 700;}
 .content2 ul li p{margin-top: 5px; font-weight: 400;}
-/* 이미지 */
+/* 서비스 소개 _이미지 */
 .content2 ul li::before{position: absolute;top: 40px; display: block;content: "";width: 130px;height: 130px;background-color: #F37321;background-repeat: no-repeat;background-position: 50% 50%;border-radius: 50%;}
 .content2 ul li:nth-of-type(1):before{background-image: url(../image/icon_section3_1.png);}
 .content2 ul li:nth-of-type(2):before{background-image: url(../image/icon_section3_2.png);}
 .content2 ul li:nth-of-type(3):before{background-image: url(../image/icon_section3_3.png);}
 .content2 ul li:nth-of-type(4):before{background-image: url(../image/icon_section3_4.png);}
 .content2 ul li:nth-of-type(5):before{background-image: url(../image/icon_section3_5.png);}
-
 
 /* 브랜드 소개 */
 .content3{ width: 100%; padding-top: 100px;}
@@ -175,23 +161,23 @@ point1.호버시 나타나는 배경과 글씨는 또다른 호버로 인식된�
 .content3 .title_box h3{color: #F37321;font-weight: bold;}
 .content3 .title_box h2{padding: 0 0 20px;color: #333; font-size: 42px;font-weight: 300;}
 .content3 .title_box p{font-size: 15px;font-weight: 300;color: #333;}
-/* 이미지 */
+/* 브랜드 소개_이미지 */
 .content3 .list_frame{width: 100%;padding-top: 50px;overflow: hidden;}
 .content3 .list_frame ul{opacity: 0; display: flex;width: 700%;transform: translateY(50px);transition: all 0.5s ease-in-out;}
 .content3.on .list_frame ul{opacity: 1;transform: translateY(0);}
-.content3 .list_frame ul li{position: relative; width: calc(100% / 7);padding: 0 20px;}
-/* 호버 이미지 */
+.content3 .list_frame ul li{position: relative; width: calc(100% / 7);margin: 0 20px;}
+/* 브랜드 소개_호버 이미지 */
 .content3 .list_frame ul li a{display: block; width: 100%;height: 100%;}
 .content3 .list_frame ul li a::after{position: absolute;left: 0;top: 0; display: block;content: "";width: 100%;height: 100%;background-color: rgba(247, 111, 27, 0.8);transform: scale(0,1);transition: all 0.3s ease-in-out;}
 .content3 .list_frame ul li a img:nth-of-type(1){width: 100%;}
 .content3 .list_frame ul li a img:nth-of-type(2){z-index: 1; position: absolute;left: 20px;top: 30px;}
 .content3 .list_frame ul li a h3{position: absolute;right: 20px;bottom: 20px;font-size: 18px;font-weight: 400; color: #fff;letter-spacing: 0.7px;}
 .content3 .list_frame ul li a span{display: none; z-index: 1; position: absolute;right: 40px;bottom: 20px;font-size: 16px;font-size: 400;color: #fff;}
-/* 호버효과 */
+/* 브랜드 소개_호버효과 */
 .content3 .list_frame ul li:hover a h3{display: none;}
 .content3 .list_frame ul li:hover a span{display: block;}
 .content3 .list_frame ul li:hover a::after{transform: scale(1,1);}
-/* 버튼 */
+/* 브랜드 소개_버튼 */
 .content3 .arr_btn{ opacity: 0;position: relative;left: 50%; transform: translate(-50%,50px); margin-top: 20px; display: inline-block;transition: all 0.5s ease-in-out;}
 .content3.on .arr_btn{opacity: 1;transform: translateY(0);}
 .content3 button{padding: 0;position: relative;top: 50%;transform: translateY(-50%);border: none;outline: none; width: 4px;height: 6px;}
@@ -199,17 +185,15 @@ point1.호버시 나타나는 배경과 글씨는 또다른 호버로 인식된�
 .content3 .icon{ display:inline-block;margin: 0 3px -1px; width: 16px;height: 16px;border-radius: 50%;border: 1px solid #F37321;}
 .content3 button.next_btn{background: url(../image/btn_swiper_next.png) no-repeat 0 0;}
 
-
 /* 입점문의 */
 .content4{width: 100%;}
 .content4 .inner{opacity: 0; width: 100%;height: 100%;padding: 0 50px;transform: translateY(100px);transition: all 0.4s ease-in-out;}
 .content4.on .inner{opacity: 1;transform: translateY(0);}
-/* 왼쪽 박스 */
+/* 입점문의_왼쪽 박스 */
 .content4 .left_box{ width: 100%;height: 50%}
 .content4 .left_box h2{margin-top: 30px; font-size: 40px;color: #333;font-weight: 300;}
-/* .content4 .left_box::after{z-index: 10; position: absolute;right: 0;top: 0; display: block;content: "";width: 1px;height: 100%;background-color: red;} */
 .content4 .left_box p{margin-top: 10px;font-size: 16px;color: #333;letter-spacing: -0.4px;}
-/* 폼 리스트 */
+/* 입점문의_폼 리스트 */
 .content4 .left_box form{margin-top: 20px;width: 100%;}
 .content4 .left_box form ul li{padding: 20px 0 20px 100px; width:100%; border-bottom: 1px solid #e3e3e3;}
 .content4 .left_box form ul li label{position: absolute;left: 50px;font-size: 15px; font-weight: 400;}
@@ -219,58 +203,55 @@ point1.호버시 나타나는 배경과 글씨는 또다른 호버로 인식된�
 .content4 .left_box form ul li:nth-child(1) input::placeholder,
 .content4 .left_box form ul li:nth-child(2) input::placeholder,
 .content4 .left_box form ul li:nth-child(3) textarea::placeholder{font-size: 15px; color: #d6d6d6;}
-/* 약관동의 */
+/* 입점문의_약관동의 */
 .content4 .left_box form div.agree{margin: 20px 0 0;}
 .content4 .left_box form div.agree input{appearance:none;width: 14px;height: 14px;border: 1px solid #d6d6d6;border-radius: 50%;cursor: pointer;}
 .content4 .left_box form div.agree input:checked{width: 13px;height: 13px;border-radius: 50%;background-color: #F37321;border: 2px solid #fff; outline: 1px solid #F37321;cursor: pointer;}
 .content4 .left_box form div.agree label{padding-left: 5px; font-size: 14px;}
 .content4 .left_box form div.agree a{font-size: 14px;}
-/* 고객센터 */
+/* 입점문의_고객센터 */
 .content4 .btn_box{display: flex;justify-content: space-between;padding: 50px 0;}
-.content4 .btn_box div:first-child{height: 35px; background: url(../image/icon_tel.png)no-repeat 0 0;}
+.content4 .btn_box div:first-child{height: 35px; background: url(../image/icon_tel.png) no-repeat 0 0;}
 .content4 .btn_box div:first-child strong{padding: 0 5px 0 45px; color: #F37321; font-weight: 700; font-size: 16px;line-height: 35px;}
 .content4 .btn_box div:first-child a{color: #333; font-weight: 700;font-size: 20px;line-height: 35px;}
-/* 버튼 */
+/* 입점문의_버튼 */
 .content4 .btn_box div:last-child{width: 140px; border-bottom: 1px solid #e3e3e3;}
 .content4 .btn_box div:last-child a{position: relative;display: block;width: 100%;height: 100%;padding: 5px 0 15px;}
 .content4 .btn_box div:last-child a::after{position: absolute;left: 0;bottom: -1px; display: block;content: "";width: 200px;height: 1px;background-color: #F37321;transform: scaleX(0);transform-origin: bottom left; transition: all 0.4s ease-in-out;}
 .content4 .btn_box div:last-child a span{color: #333;font-size: 14px; font-weight: 400;}
-/* 버튼꾸미기 */
+/* 입점문의_버튼꾸미기 */
 .content4 .btn_box div:last-child a .arrow{position: absolute;right: 0px;top: 10px; width: 17px;height: 17px;background-color: #F37321;border-radius: 50%;}
 .content4 .btn_box div:last-child a .arrow::before{content: "";display: block; position: absolute;top: 8.5px; width: 12px;height: 0.5px;background-color: #fff;}
 .content4 .btn_box div:last-child a .arrow::after{content: "";position: absolute;right: 5px;top: 6.5px; width: 5px;height: 0.5px;background-color: #fff;transform: rotate(45deg);}
-/* 버튼-호버효과 */
+/* 입점문의_버튼-호버효과 */
 .content4 .btn_box div:last-child:hover a::after{transform: scaleX(1);}
-/* 오른쪽 박스 */
+/* 입점문의_오른쪽 박스 */
 .content4 .right_box{width: 100%;height: 50%;}
-.content4 .right_box .position_box{}
 .content4 .right_box h3{color: #F37321;font-weight: bold;}
 .content4 .right_box p{padding-top: 10px; font-size: 18px;color: #333;font-weight: 400;line-height: 24px;}
-/* customer_box */
+/* 입점문의_customer_box */
 .content4 .right_box .customer_box{ width: 100%;height: 50%;border-bottom: 1px solid #f0f0f0;}
-/* recruit_box */
+/* 입점문의_recruit_box */
 .content4 .right_box .recruit_box{ width: 100%;height: 50%;padding: 30px 0 150px;}
 .content4 .right_box .recruit_box ul li{position: relative; margin-top: 40px;padding-bottom: 15px; border-bottom: 1px solid #e3e3e3;}
 .content4 .right_box .recruit_box ul li::before{position: absolute;display: block;content: "";width: 10px;height: 10px;border-radius: 50%;background-color: #F37321;right: 0;top: 8px;transform: scale(0);transition: all 0.3s ease-in-out;}
 .content4 .right_box .recruit_box ul li::after{position: absolute;display: block;content: "";width: 100%;height: 1px;background-color: #F37321;left: 0;bottom: -1px;transform: scaleX(0);transform-origin: bottom left;transition: all 0.3s ease-in-out;}
 .content4 .right_box .recruit_box ul li a strong{padding-left:5px; color: #333;}
-/*recruit_box-호버 효과 */
+/* 입점문의_recruit_box-호버 효과 */
 .content4 .right_box .recruit_box ul li:hover::before{transform: scale(1);}
 .content4 .right_box .recruit_box ul li:hover::after{transform: scaleX(1);}
-
 
 /* footer */
 #footer{z-index: 50;position: relative; width: 100%;}
 .footer_inner{display: flex;flex-direction: column;justify-items: center;justify-content: center; width: 100%;height: 100%; border-top: 1px solid rgba(0, 0, 0, 0.2);}
 .footer_inner h1{margin: 50px auto 30px; width: 187px;height: 41px; }
-/* 사이트맵 */
+/* footer_사이트맵 */
 .footer_inner div:nth-of-type(1) ul:first-child{display: flex;gap: 30px;justify-content: center;}
 .footer_inner div:nth-of-type(1) ul:first-child li{position: relative; font-size: 14px;}
 .footer_inner div:nth-of-type(1) ul:first-child li:first-child::after{position: absolute;right: -17px;top: 6px; display: block;content: "";width: 1px;height: 12px;background-color: #ccc;}
-.footer_inner div:nth-of-type(1) ul:last-child{display: flex;justify-content: center; gap: 40px; padding-top: 15px;font-size: 14px;}
+.footer_inner div:nth-of-type(1) ul:last-child{display: flex;justify-content: space-around; padding-top: 15px;font-size: 14px;}
 .footer_inner div:nth-of-type(1) ul:last-child li a{color: #333;font-size: 16px;font-weight: 400;}
-/* .footer_inner div:nth-of-type(1) ul:last-child li:last-child{gap: 0;} */
-/* 주소 */
+/* footer_주소 */
 .footer_inner div:nth-of-type(2){margin: 30px auto 30px;text-align: center; font-size: 14px;}
 .footer_inner div:nth-of-type(2) address{margin-bottom: 10px; color: #333;font-size: 15px;}
 .footer_inner div:nth-of-type(2) p{margin-bottom: 20px;;}
@@ -280,6 +261,5 @@ point1.호버시 나타나는 배경과 글씨는 또다른 호버로 인식된�
 
 /* slding */
 .sliding{display: none;}
-
 .sliding_name{display: none;}
 }/* //mobide */

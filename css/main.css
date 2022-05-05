@@ -190,14 +190,12 @@ aside .family > div a{display: block;transform: rotate(-90deg);padding-right: 40
 aside .family ul{display: none;position: absolute;left: 0px;top: -150px;}
 aside .family ul li{font-size: 15px;line-height: 2;text-align: left;}
 aside .family ul li a{color: #ccc;}
-/* aside .family > div a:hover{background-color: #F37321;} */
 aside .scroll{position: absolute;right: 10px; bottom: 140px;}
 aside .scroll p:first-child{font-size: 12px; white-space: nowrap;transform: rotate(-90deg);}
 aside .scroll p:last-child{position: absolute;right: 50%;transform: translateX(50%); top: 90px; width: 22px;height: 28px;border-radius: 9px;border: 1px solid #fff;animation-name: scrollAni;animation-duration: 0.8s;animation-iteration-count: infinite;animation-timing-function: linear; animation-direction: reverse;}
 aside .scroll p:last-child::after{position: absolute;content: "";width: 2px;height: 2px;background-color: #fff;left: 50%; top: 50%;}
 aside.on .scroll{display: none;}
 @keyframes scrollAni{
-
     0%{top: 90px;}
     50%{top: 95px}
     100%{top: 90px}
@@ -217,7 +215,6 @@ aside.on .scroll{display: none;}
 .main_visual.on div p:nth-child(2){opacity: 1; transform: translateX(0);}
 .main_visual.on div p:last-child{opacity: 1;transform: translateY(0);}
 
-
 /* 사업소개 */
 /* 사업소개_공통 */
 .content1{display: block;width: 100%;height: 100vh;}
@@ -227,6 +224,10 @@ aside.on .scroll{display: none;}
 /* 사업소개_배경 이미지 */
 .content1 ul{height: 100%; display: flex;}
 .content1 ul li{opacity: 0; width: calc(100% / 3);height: 100vh; position: relative;background-repeat: no-repeat;background-position: 0 0;background-size: cover;transform: scale(0,1);transform-origin:left center; transition: all 0.4s 0.2s ease-in-out;}
+.content1 ul li::after{pointer-events: none; opacity: 0; position: absolute;left: 0;top: 0; content: "";width: 100%;height: 100%;background-color: #F37321;transform: scale(0);}
+.content1 ul li:nth-child(1){background-image: url(../image/img_section2_1.jpg);}
+.content1 ul li:nth-child(2){background-image: url(../image/img_section2_2.jpg);}
+.content1 ul li:nth-child(3){background-image: url(../image/img_section2_3.jpg);}
 .content1.on ul li{opacity: 1; transform: scale(1,1);}
 /* 사업소개_스크롤탑이 섹션에 도착하면 원래 배경의 글자박스가 위로 이동하며 서서히 나타난다. */
 .content1 ul li:nth-child(1) div:first-child{opacity: 0; top: 45%; transform: translateY(200px);transition: all 1s 0.8s ease-in-out;}
@@ -235,11 +236,7 @@ aside.on .scroll{display: none;}
 .content1.on ul li:nth-child(1) div:first-child{opacity: 1;transform: translateY(0);}
 .content1.on ul li:nth-child(2) div:first-child{opacity: 1;transform: translateY(0);}
 .content1.on ul li:nth-child(3) div:first-child{opacity: 1;transform: translateY(0);}
-.content1 ul li:nth-child(1){background-image: url(../image/img_section2_1.jpg);}
-.content1 ul li:nth-child(2){background-image: url(../image/img_section2_2.jpg);}
-.content1 ul li:nth-child(3){background-image: url(../image/img_section2_3.jpg);}
 /* 사업소개_호버시 글자 0.5초 뒤에 나오고 마우스 아웃하면 바로 사라지는 효과*/
-.content1 ul li::after{pointer-events: none; opacity: 0; position: absolute;left: 0;top: 0; content: "";width: 100%;height: 100%;background-color: #F37321;transform: scale(0);}
 .content1 ul li:hover::after{animation: bgScale 0.5s ease-in-out 1;opacity: 0.8; transform: scale(1);}
 .content1 ul li div:last-child{pointer-events: none; z-index: 1; opacity: 0; top: 40%;}
 .content1 ul li:hover div:last-child{animation-name:  fontAni; animation-duration: 0.8s; animation-delay: 0.4s; animation-fill-mode: forwards;}
@@ -275,7 +272,6 @@ aside.on .scroll{display: none;}
 .content2 ul li:nth-of-type(4):before{background-image: url(../image/icon_section3_4.png);}
 .content2 ul li:nth-of-type(5):before{background-image: url(../image/icon_section3_5.png);}
 
-
 /* 브랜드 소개 */
 .content3{ width: 100%;height: 100vh; text-align: center;}
 .content3 .title_box{opacity: 0; padding-top: 150px; width: 100%;height: 250px; transform: translateY(50px);transition: all 0.5s 0.5s ease-in-out;}
@@ -306,7 +302,6 @@ aside.on .scroll{display: none;}
 .content3 button.prev_btn{ background: url(../image/btn_swiper_prev.png) no-repeat 0 0;}
 .content3 .icon{ display:inline-block;margin: 0 3px -1px; width: 16px;height: 16px;border-radius: 50%;border: 1px solid #F37321;}
 .content3 button.next_btn{background: url(../image/btn_swiper_next.png) no-repeat 0 0;}
-
 
 /* 입점문의 */
 .content4{width: 100%;height: 100vh;}

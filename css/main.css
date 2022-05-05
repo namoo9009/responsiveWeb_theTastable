@@ -121,19 +121,24 @@ a{text-decoration: none;color: #666;}
 .header_wrap .srch_box input{z-index: 10;width: 120px; font-size: 14px; border: none;outline: none;border-bottom: 1px solid rgba(255, 255, 255, 0.3);background: none;padding: 0 10px;line-height: 38px;color: #fff;transition: all 0.3s ease-in-out;}
 .header_wrap .srch_box button{position: absolute;right: -35px; top: 0; width: 38px;height: 38px;border-radius: 50%; border: none; outline: none; text-indent: -9999px;overflow: hidden;background:#fff url(../image/icon_search_on.png) no-repeat 50% 50%;cursor: pointer;}
 /* header_햄버거버튼 */
-.ham_box{z-index: 50;position: absolute;right: 0px;top: 0px; width: 90px;height: 90px;cursor: pointer; border: 1px solid red;}
-.ham_box span{position: absolute;left: 50%;transform: translateX(-50%); width: 35px;height: 1px;background-color: #fff; transition: 0.4s;}
-.ham_box span:nth-of-type(1){top: 40%;}
-.ham_box span:nth-of-type(2){top: 50%;}
-.ham_box span:nth-of-type(3){top: 60%;}
+.ham_box{z-index: 50;position: absolute;right: 0px;top: 0px; width: 90px;height: 90px;cursor: pointer;}
+.ham_box div{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); width: 40px; height: 20px;}
+.ham_box div::after{opacity: 0; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); content: "menu"; color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase;}
+.ham_box div span{position: absolute; width: 100%;height: 1px;background-color: #fff; transition: 0.3s;}
+.ham_box div span:nth-of-type(1){left: 0; top: 0;}
+.ham_box div span:nth-of-type(2){top: 50%;}
+.ham_box div span:nth-of-type(3){right: 0; bottom: 0;}
 /* header_햄버거 버튼 호버시 */
-.ham_box:hover span:nth-of-type(1){transform: translateX(-15px); width: 20px;}
-.ham_box:hover span:nth-of-type(2){top: 50%;}
-.ham_box:hover span:nth-of-type(3){width: 20px;}
+.ham_box:hover div::after{opacity: 1;}
+.ham_box:hover div span:nth-of-type(1){left: 0; width: 20px;}
+.ham_box:hover div span:nth-of-type(2){width: 0;}
+.ham_box:hover div span:nth-of-type(3){left: auto; right: 0; width: 20px;}
+#wrap.hamBtnOn .ham_box:hover div span{width: 100%;}
 /* header_햄버거 버튼 클릭시 버튼모양이 X로 변경 */
-#wrap.hamBtnOn .header_wrap .ham_box span:nth-of-type(1){top: 50%; transform: translateX(-50%) rotate(45deg);}
-#wrap.hamBtnOn .header_wrap .ham_box span:nth-of-type(2){display: none;}
-#wrap.hamBtnOn .header_wrap .ham_box span:nth-of-type(3){top: 50%; transform: translateX(-50%) rotate(-45deg);}
+#wrap.hamBtnOn .ham_box div::after{opacity: 0;}
+#wrap.hamBtnOn .header_wrap .ham_box div span:nth-of-type(1){top: 50%; transform: rotate(45deg);}
+#wrap.hamBtnOn .header_wrap .ham_box div span:nth-of-type(2){display: none;}
+#wrap.hamBtnOn .header_wrap .ham_box div span:nth-of-type(3){top: 50%; transform: rotate(-45deg);}
 /* header_페이지 이동할때 섹션의 배경색에 따라 헤더의 글자색 변경, 
 햄버거 버튼 클릭시 header의 로고, 검색영역 검은색으로 변경*/
 #wrap.black .header_wrap,

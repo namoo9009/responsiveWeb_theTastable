@@ -11,12 +11,14 @@ const gnbLi = document.querySelectorAll('nav.gnb > ul > li');
 const hamBtn = document.querySelector('.ham_box');
 const allmenuWrap = document.querySelector('.allmenu_wrap');
 const section = document.querySelectorAll('section');
+const brandListFrame = document.querySelector('.list_box');
 const topBtn = document.querySelector('#footer .top');
 const slideBtn = document.querySelectorAll('.sliding .pages a');
 const slideBtnName = document.querySelectorAll('.sliding_name');
 
 // 디바이스 사이즈
 const tabletLimit = 1023;
+const mobileLimit = 767;
 
 // global로 사용하는 데이터 값
 let gnbEffect;
@@ -39,6 +41,7 @@ function getSize(){
     winWidth = body.offsetWidth; 
     winHeight = body.offsetHeight;
     scrollY = window.pageYOffset;
+    brandImgListWidth = document.querySelector('.list_box li').getBoundingClientRect().width;
 
     mainScrollTop = section[0].getBoundingClientRect().top + scrollY;
     con1ScrollTop = section[1].getBoundingClientRect().top + scrollY;
@@ -47,6 +50,7 @@ function getSize(){
     con4ScrollTop = section[4].getBoundingClientRect().top + scrollY;
     footerScrollTop = section[5].getBoundingClientRect().top + scrollY;
     footerScrollBottom = section[5].getBoundingClientRect().top + scrollY + section[5].offsetHeight - window.innerHeight ;
+    console.log(brandImgListWidth)
 };
 
 /*-----------------------------------------------------------------*/
@@ -75,7 +79,44 @@ function mouseoverGnb(){
             headerWrap.classList.remove('on');
         });
     })
+};
+
+/*-----------------------------------------------------------------*/
+
+//이전/다음 버튼 클릭시 이미지 슬라이드 이동
+const prevBtn = document.querySelector('.content3 .prev_btn');
+const nextBtn = document.querySelector('.content3 .next_btn');
+let imgIdx = 0;
+
+function moveSlide(imgIdx) {
+    console.log('함수호출')
+    getSize();
+    const gap = 30;
+    const mobileGap = 40;
+    let slideDistance =  gap + brandImgListWidth;
+    let mobileSlideDistance = mobileGap + brandImgListWidth;
+    console.log(mobileSlideDistance)
+    if(winWidth <= mobileLimit) {
+        brandListFrame.style.left = mobileSlideDistance * imgIdx + 'px';
+    } else {
+        brandListFrame.style.left = slideDistance * imgIdx + 'px';
+    }
 }
+prevBtn.addEventListener('click', () => {
+    console.log('이전클릭')
+    imgIdx = ++imgIdx;
+    if(imgIdx > 0) imgIdx = -4;
+    if(imgIdx < -4) imgIdx = 0;
+    moveSlide(imgIdx);
+    
+})
+nextBtn.addEventListener('click', () => {
+    console.log('이후클릭')
+    imgIdx = --imgIdx;
+    if(imgIdx > 0) imgIdx = -4;
+    if(imgIdx < -4) imgIdx = 0;
+    moveSlide(imgIdx);
+})
 
 /*-----------------------------------------------------------------*/
 /*페이지 바로가기 버튼*/

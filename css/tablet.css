@@ -167,7 +167,7 @@ aside{display: none;}
 /* 브랜드 소개 _이미지 */
 .content3 .list_frame{width: 100%;padding-top: 50px;overflow: hidden;}
 .content3 .list_frame ul{opacity: 0; display: flex;width: 233.3333%;transform: translateY(50px);transition: all 0.5s ease-in-out;}
-.content3.on .list_frame ul{opacity: 1;transform: translateY(0);}
+.content3.on .list_frame ul{position: relative; opacity: 1;transform: translateY(0);}
 .content3 .list_frame ul li{position: relative; width: calc(100% / 7);margin: 0 15px;}
 /* 브랜드 소개 _호버 이미지 */
 .content3 .list_frame ul li a{display: block; width: 100%;height: 100%;}
@@ -183,7 +183,7 @@ aside{display: none;}
 /* 브랜드 소개 _버튼 */
 .content3 .arr_btn{ opacity: 0;position: relative;left: 50%;transform: translate(-50%,50px); margin-top: 20px; display: inline-block;transition: all 0.5s ease-in-out;}
 .content3.on .arr_btn{opacity: 1;transform: translateY(0);}
-.content3 button{padding: 0;position: relative;top: 50%;transform: translateY(-50%);border: none;outline: none; width: 4px;height: 6px;}
+.content3 button{padding: 0;position: relative;top: 50%;transform: translateY(-50%);border: none;outline: none; width: 4px;height: 6px;cursor: pointer;}
 .content3 button.prev_btn{ background: url(../image/btn_swiper_prev.png) no-repeat 0 0;}
 .content3 .icon{ display:inline-block;margin: 0 3px -1px; width: 16px;height: 16px;border-radius: 50%;border: 1px solid #F37321;}
 .content3 button.next_btn{background: url(../image/btn_swiper_next.png) no-repeat 0 0;}

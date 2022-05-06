@@ -23,12 +23,12 @@ a{text-decoration: none;color: #666;}
 .allmenu_wrap.on{display: block;}
 /* header_검색버튼 */
 .header_wrap .srch_box{position: absolute;right: 95px;top: 50%;margin-top: -20px;}
-.header_wrap .srch_box input{z-index: 10;width: 100px; font-size: 14px; border: none;outline: none;border-bottom: 1px solid rgba(255, 255, 255, 0.3);background: none;padding: 0 10px;line-height: 38px;color: #fff;transition: all 0.3s ease-in-out;}
-.header_wrap .srch_box button{position: absolute;right: -30px; top: 5px; width: 32px;height: 32px;border-radius: 50%; border: none; outline: none; text-indent: -9999px;overflow: hidden;background:rgba(255, 255, 255, 0.2) url(../image/icon_search.png)no-repeat 50% 50%;cursor: pointer;}
+.header_wrap .srch_box input{z-index: 10;width: 50px; font-size: 14px; border: none;outline: none;border-bottom: 1px solid rgba(255, 255, 255, 0.3);background: none;padding: 0 10px;line-height: 38px;color: #fff;transition: all 0.3s ease-in-out;}
+.header_wrap .srch_box button{position: absolute;right: -30px; top: 10px; width: 28px;height: 28px;border-radius: 50%; border: none; outline: none; text-indent: -9999px;overflow: hidden;background:rgba(255, 255, 255, 0.2) url(../image/icon_search.png)no-repeat 50% 50%;cursor: pointer;}
 .header_wrap .srch_box button.on{background: #fff url(../image/icon_search_on.png) no-repeat 50% 50%;}
 /* header_햄버거버튼 */
 .ham_box{position: absolute;right: -10px;top: 0px; width: 90px;height: 90px;cursor: pointer;}
-.ham_box div{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); width: 35px; height: 20px;}
+.ham_box div{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); width: 28px; height: 18px;}
 .ham_box div::after{opacity: 0; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); content: "menu"; color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase;}
 .ham_box div span{position: absolute; width: 100%;height: 1px;background-color: #fff; transition: 0.3s;}
 .ham_box div span:nth-of-type(1){left: 0; top: 0;}
@@ -163,7 +163,7 @@ aside{display: none;}
 .content3 .title_box p{font-size: 15px;font-weight: 300;color: #333;}
 /* 브랜드 소개_이미지 */
 .content3 .list_frame{width: 100%;padding-top: 50px;overflow: hidden;}
-.content3 .list_frame ul{opacity: 0; display: flex;width: 700%;transform: translateY(50px);transition: all 0.5s ease-in-out;}
+.content3 .list_frame ul{position: relative; opacity: 0; display: flex;width: 700%;transform: translateY(50px);transition: all 0.5s ease-in-out;}
 .content3.on .list_frame ul{opacity: 1;transform: translateY(0);}
 .content3 .list_frame ul li{position: relative; width: calc(100% / 7);margin: 0 20px;}
 /* 브랜드 소개_호버 이미지 */
@@ -180,7 +180,7 @@ aside{display: none;}
 /* 브랜드 소개_버튼 */
 .content3 .arr_btn{ opacity: 0;position: relative;left: 50%; transform: translate(-50%,50px); margin-top: 20px; display: inline-block;transition: all 0.5s ease-in-out;}
 .content3.on .arr_btn{opacity: 1;transform: translateY(0);}
-.content3 button{padding: 0;position: relative;top: 50%;transform: translateY(-50%);border: none;outline: none; width: 4px;height: 6px;}
+.content3 button{padding: 0;position: relative;top: 50%;transform: translateY(-50%);border: none;outline: none; width: 4px;height: 6px;cursor: pointer;}
 .content3 button.prev_btn{ background: url(../image/btn_swiper_prev.png) no-repeat 0 0;}
 .content3 .icon{ display:inline-block;margin: 0 3px -1px; width: 16px;height: 16px;border-radius: 50%;border: 1px solid #F37321;}
 .content3 button.next_btn{background: url(../image/btn_swiper_next.png) no-repeat 0 0;}
@@ -210,7 +210,7 @@ aside{display: none;}
 .content4 .left_box form div.agree label{padding-left: 5px; font-size: 14px;}
 .content4 .left_box form div.agree a{font-size: 14px;}
 /* 입점문의_고객센터 */
-.content4 .btn_box{display: flex;justify-content: space-between;padding: 50px 0;}
+.content4 .btn_box{display: flex;flex-direction: column;justify-content: center; padding: 50px 0;}
 .content4 .btn_box div:first-child{height: 35px; background: url(../image/icon_tel.png) no-repeat 0 0;}
 .content4 .btn_box div:first-child strong{padding: 0 5px 0 45px; color: #F37321; font-weight: 700; font-size: 16px;line-height: 35px;}
 .content4 .btn_box div:first-child a{color: #333; font-weight: 700;font-size: 20px;line-height: 35px;}

@@ -220,8 +220,8 @@ aside.on .scroll{display: none;}
 .content3 .title_box h2{padding: 10px 0 30px;color: #333; font-size: 48px;font-weight: 300;}
 .content3 .title_box p{font-size: 16px;font-weight: 300;color: #333;}
 /* 브랜드 소개 _이미지 */
-.content3 .list_frame{width: 100%;padding: 110px 90px 0 70px;overflow: hidden;}
-.content3 .list_frame ul{opacity: 0; display: flex;width: 233.5%;transform: translateY(50px);transition: all 0.5s 1s ease-in-out;}
+.content3 .list_frame{position: relative; width: 100%;padding: 110px 90px 0 70px;overflow: hidden;}
+.content3 .list_frame ul{position: relative; opacity: 0; display: flex;width: 233.5%;transform: translateY(50px);transition: opacity 0.5s 1s ease-in-out, left 0.4s;}
 .content3.on .list_frame ul{opacity: 1;transform: translateY(0);}
 .content3 .list_frame ul li{position: relative; width: calc(100% / 7);margin-left: 30px;}
 /* 브랜드 소개 _호버 이미지 */
@@ -238,7 +238,7 @@ aside.on .scroll{display: none;}
 /* 브랜드 소개 _버튼 */
 .content3 .arr_btn{opacity: 0; margin-top: 30px; display: inline-block;transform: translateY(50px);transition: all 0.5s 1s ease-in-out;}
 .content3.on .arr_btn{opacity: 1;transform: translateY(0);}
-.content3 button{padding: 0;position: relative;top: 50%;transform: translateY(-50%);border: none;outline: none; width: 4px;height: 6px;}
+.content3 button{padding: 0;position: relative;top: 50%;transform: translateY(-50%);border: none;outline: none; width: 4px;height: 6px;cursor: pointer;}
 .content3 button.prev_btn{ background: url(../image/btn_swiper_prev.png) no-repeat 0 0;}
 .content3 .icon{ display:inline-block;margin: 0 3px -1px; width: 16px;height: 16px;border-radius: 50%;border: 1px solid #F37321;}
 .content3 button.next_btn{background: url(../image/btn_swiper_next.png) no-repeat 0 0;}

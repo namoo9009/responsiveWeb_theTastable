@@ -5,69 +5,7 @@
 @import url(mobile.css);
 @import url(tablet.css);
 
-/* pc(글자크기나 간격이 다르게 적용됨) */
-@media screen and (min-width:1024px) and (max-width:1200px){
-/* header_주메뉴 */
-.header_wrap .gnb > ul > li{font-size: 16px;}
-.header_wrap .gnb > ul > li > a{padding: 0 25px;}
 
-/* header_검색버튼 */
-.header_wrap .srch_box{right: 130px;}
-.header_wrap .srch_box input{width: 100px;}
-.header_wrap .srch_box button{right: -30px; top: 5px; width: 34px;height: 34px;}
-
-/* 메인비쥬얼 */
-.main_visual div p:first-child,
-.main_visual div p:nth-child(2){font-size: 40px;}
-
-/* 사업소개 */
-/* 사업소개_공통 */
-.content1 ul li div h3{font-size: 24px;}
-
-/* 서비스 소개  */
-.content2 div h2{margin: 0 0 20px;}
-
-/* 서비스 소개_리스트 */
-.content2 ul{padding-top: 210px;gap: 40px;}
-
-/* 브랜드 소개 */
-.content3 .title_box h2{padding: 0 0 20px;}
-/* 브랜드 소개 _이미지 */
-.content3 .list_frame{padding: 90px 90px 0 70px;}
-.content3 .list_frame ul{width: 350%;}
-
-/* 입점문의 */
-.content4{width: 100%;height: 100vh;}
-.content4 .inner{ display: flex; width: 100%;height: 100%; padding: 90px 90px 0 0;}
-/* 입점문의_왼쪽 박스 */
-.content4 .left_box{padding: 20px 50px 0;}
-.content4 .left_box h2{font-size: 40px;}
-.content4 .left_box p{margin-top: 10px;font-size: 16px;color: #333;letter-spacing: -0.4px;}
-/* 입점문의_폼 리스트 */
-.content4 .left_box form ul li{padding: 20px 0 20px 80px;}
-/* 입점문의_고객센터 */
-.content4 .btn_box{padding-top: 30px;}
-/* 입점문의_버튼 */
-.content4 .btn_box div:last-child{width: 140px;}
-/* 입점문의_오른쪽 박스 */
-.content4 .right_box p{padding-top: 10px; font-size: 18px;line-height: 24px;}
-/* 입점문의_customer_box */
-.content4 .right_box .customer_box{padding: 120px 40px 0;}
-/* 입점문의_recruit_box */
-.content4 .right_box .recruit_box{ padding: 50px 40px 0;}
-
-/* footer */
-.footer_inner{padding: 30px 110px 68px 0px;}
-/* footer_사이트맵 */
-.footer_inner div:nth-of-type(1){float: right;margin-left: 40px;;}
-.footer_inner div:nth-of-type(1) ul:first-child{display: flex;gap: 30px;justify-content: right;}
-.footer_inner div:nth-of-type(1) ul:first-child li{font-size: 14px;}
-.footer_inner div:nth-of-type(1) ul:last-child{gap: 30px;font-size: 14px;}
-.footer_inner div:nth-of-type(1) ul:last-child li a{font-size: 16px;}
-
-/* footer_주소 */
-.footer_inner div:nth-of-type(2){font-size: 14px;}
-}
 
 /* pc */
 @media only screen and (min-width:1024px){
@@ -400,3 +338,66 @@ aside.on .scroll{display: none;}
 }
 
 
+/* pc(글자크기나 간격이 다르게 적용됨) */
+@media screen and (min-width:1024px) and (max-width:1200px){
+/* header_주메뉴 */
+.header_wrap .gnb > ul > li{font-size: 16px;}
+.header_wrap .gnb > ul > li > a{padding: 0 25px;}
+
+/* header_검색버튼 */
+.header_wrap .srch_box{right: 130px;}
+.header_wrap .srch_box input{width: 100px;}
+.header_wrap .srch_box button{right: -30px; top: 5px; width: 34px;height: 34px;}
+
+/* 메인비쥬얼 */
+.main_visual div p:first-child,
+.main_visual div p:nth-child(2){font-size: 40px;}
+
+/* 사업소개 */
+/* 사업소개_공통 */
+.content1 ul li div h3{font-size: 24px;}
+
+/* 서비스 소개  */
+.content2 div h2{margin: 0 0 20px;}
+
+/* 서비스 소개_리스트 */
+.content2 ul{padding-top: 210px;gap: 40px;}
+
+/* 브랜드 소개 */
+.content3 .title_box h2{padding: 0 0 20px;}
+/* 브랜드 소개 _이미지 */
+.content3 .list_frame{padding: 90px 90px 0 70px;}
+.content3 .list_frame ul{width: 350%;}
+
+/* 입점문의 */
+.content4{width: 100%;height: 100vh;}
+.content4 .inner{ display: flex; width: 100%;height: 100%; padding: 90px 90px 0 0;}
+/* 입점문의_왼쪽 박스 */
+.content4 .left_box{padding: 20px 50px 0;}
+.content4 .left_box h2{font-size: 40px;}
+.content4 .left_box p{margin-top: 10px;font-size: 16px;color: #333;letter-spacing: -0.4px;}
+/* 입점문의_폼 리스트 */
+.content4 .left_box form ul li{padding: 20px 0 20px 80px;}
+/* 입점문의_고객센터 */
+.content4 .btn_box{padding-top: 30px;}
+/* 입점문의_버튼 */
+.content4 .btn_box div:last-child{width: 140px;}
+/* 입점문의_오른쪽 박스 */
+.content4 .right_box p{padding-top: 10px; font-size: 18px;line-height: 24px;}
+/* 입점문의_customer_box */
+.content4 .right_box .customer_box{padding: 120px 40px 0;}
+/* 입점문의_recruit_box */
+.content4 .right_box .recruit_box{ padding: 50px 40px 0;}
+
+/* footer */
+.footer_inner{padding: 30px 110px 68px 0px;}
+/* footer_사이트맵 */
+.footer_inner div:nth-of-type(1){float: right;margin-left: 40px;;}
+.footer_inner div:nth-of-type(1) ul:first-child{display: flex;gap: 30px;justify-content: right;}
+.footer_inner div:nth-of-type(1) ul:first-child li{font-size: 14px;}
+.footer_inner div:nth-of-type(1) ul:last-child{gap: 30px;font-size: 14px;}
+.footer_inner div:nth-of-type(1) ul:last-child li a{font-size: 16px;}
+
+/* footer_주소 */
+.footer_inner div:nth-of-type(2){font-size: 14px;}
+}

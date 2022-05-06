@@ -173,7 +173,6 @@ function pcRender(){
     document.querySelector('.scroll').style.display = "block";
 
     if(scrollY >= mainScrollTop && scrollY < con1ScrollTop){
-        console.log("메인");
         bgColorEffectsOfSection(0);
         slideBtnOnClick(0);
     }
@@ -350,6 +349,7 @@ window.addEventListener('resize',function(){
 },false);
 
 window.addEventListener('road', function() {
+    section[0].classList.add('on');
     window.scrollTo({
         top: 0,
         behavior: 'smooth'

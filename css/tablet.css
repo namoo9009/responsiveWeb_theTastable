@@ -175,7 +175,7 @@ aside{display: none;}
 .content3 .list_frame ul li a img:nth-of-type(1){width: 100%;}
 .content3 .list_frame ul li a img:nth-of-type(2){z-index: 1; position: absolute;left: 20px;top: 30px;}
 .content3 .list_frame ul li a h3{position: absolute;right: 20px;bottom: 20px;font-size: 18px;font-weight: 400; color: #fff;letter-spacing: 0.7px;}
-.content3 .list_frame ul li a span{display: none; z-index: 1; position: absolute;right: 40px;bottom: 20px;font-size: 16px;font-size: 400;color: #fff;}
+.content3 .list_frame ul li a span{display: none; z-index: 1; position: absolute;right: 40px;bottom: 20px;font-size: 16px;font-weight: 400;color: #fff;}
 /* 브랜드 소개 _호버효과 */
 .content3 .list_frame ul li:hover a h3{display: none;}
 .content3 .list_frame ul li:hover a span{display: block;}

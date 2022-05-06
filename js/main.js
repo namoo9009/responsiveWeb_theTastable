@@ -194,6 +194,7 @@ function pcRender(){
     document.querySelector('.scroll').style.display = "block";
 
     if(scrollY >= mainScrollTop && scrollY < con1ScrollTop){
+        console.log("메인");
         bgColorEffectsOfSection(0);
         slideBtnOnClick(0);
     }
@@ -247,11 +248,11 @@ function moveScrollWhelel(){
         el.addEventListener('mousewheel',function(delta){
             if(delta.wheelDelta < 0){        //아래로 스크롤
                 var thisPage = this.getAttribute('data-pageName');
-                // if(winWidth <= tabletLimit)return false;
+                if(winWidth <= tabletLimit)return false;
                 moveScrollWhelelToDown(thisPage)
             }else{      //위로 스크롤
                 var thisPage = this.getAttribute('data-pageName')
-                // if(winWidth <= tabletLimit)return false;
+                if(winWidth <= tabletLimit)return false;
                 moveScrollWhelelToUp(thisPage);
             }
         });
@@ -306,25 +307,25 @@ function moveScrollWhelelToDown(thisPage){
 function moveScrollWhelelToUp(thisPage){
     if(thisPage === 'main'){
         window.scrollTo({
-            top: winHeight * 0,
+            top: mainScrollTop,
             behavior: 'smooth'
         }); 
     }
     if(thisPage === 'content1'){
         window.scrollTo({
-            top: winHeight * 0,
+            top: mainScrollTop,
             behavior: 'smooth'
         }); 
     }
     if(thisPage === 'content2'){
         window.scrollTo({
-            top: winHeight * 1 + 1,
+            top: con1ScrollTop + 1,
             behavior: 'smooth'
         });
     }
     if(thisPage === 'content3'){
         window.scrollTo({
-            top: winHeight * 2 + 1,
+            top: con2ScrollTop + 1,
             behavior: 'smooth'
         }); 
     }
@@ -337,14 +338,14 @@ function moveScrollWhelelToUp(thisPage){
             }); 
         }else{
             window.scrollTo({
-                top:winHeight * 3 + 1,
+                top:con3ScrollTop + 1,
                 behavior: 'smooth'
             }); 
         }
     }
     if(thisPage === 'footer'){   //footer
         window.scrollTo({
-            top: winHeight * 4 + 1,
+            top: con4ScrollTop + 1,
             behavior: 'smooth'
         }); 
     }
@@ -367,13 +368,6 @@ window.addEventListener('scroll',function(){
 window.addEventListener('resize',function(){
     getSize();
 },false);
-
-// window.addEventListener('re', function(){
-//     window.scrollTo({
-//         top: 0,
-//         behavior: 'smooth'
-//     });
-// },false);
 
 init(); //초기화
 

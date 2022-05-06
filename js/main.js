@@ -16,7 +16,6 @@ const slideBtnName = document.querySelectorAll('.sliding_name');
 
 // 디바이스 사이즈
 const tabletLimit = 1023;
-const mobileLimit = 767;
 
 // global로 사용하는 데이터 값
 let gnbEffect;
@@ -48,17 +47,6 @@ function getSize(){
     footerScrollTop = section[5].getBoundingClientRect().top + scrollY;
     footerScrollBottom = section[5].getBoundingClientRect().top + scrollY + section[5].offsetHeight - window.innerHeight ;
 };
-
-
-
-/*------------------------------------------------------------------------------------*/
-/*태블릿버전*/
-
-//검색영역 mouseover시 버튼색상 변경
-// document.querySelector('.srch_box').addEventListener('mouseover',function(){
-//     document.querySelector('.srch_box button').classList.add('on');
-// });
-
 /*------------------------------------------------------------------------------------*/
 /*header*/
 
@@ -68,15 +56,6 @@ hamBtn.addEventListener('click',function(e){
     // gnb, aside글씨 안보이게
     gnb.classList.toggle('on');
     wrap.classList.toggle('hamBtnOn');
-    // if(wrap.getAttribute('class').includes('hamBlack')){
-    //     gnbLi.forEach(function(li){
-    //         li.children[1].style.visibility = 'hidden';
-    //         li.children[1].style.opacity = '0';
-    //         li.children[1].style.transform = 'translateY(30px)';
-    //     });
-    //     headerWrap.classList.remove('on');
-    //     clearTimeout(gnbEffect);
-    // }
 }); 
 
 //주메뉴 마우스오버
@@ -357,17 +336,25 @@ function moveScrollWhelelToUp(thisPage){
 function init(){    //시작
     getSize();
     mouseoverGnb();
-    display()
+    display();
 };
 
 window.addEventListener('scroll',function(){
     getSize();
-    display()
+    display();
 },false);
 
 window.addEventListener('resize',function(){
     getSize();
+    display();
 },false);
+
+window.addEventListener('road', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+});
 
 init(); //초기화
 

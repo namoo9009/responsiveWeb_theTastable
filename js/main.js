@@ -333,6 +333,7 @@ function moveScrollWhelelToUp(thisPage){
 //html load 완료후 함수 초기화, 공통 이벤트리스트 관리
 
 function init(){    //시작
+    section[0].classList.add('on');
     getSize();
     mouseoverGnb();
     display();
@@ -347,14 +348,6 @@ window.addEventListener('resize',function(){
     getSize();
     display();
 },false);
-
-window.addEventListener('road', function() {
-    section[0].classList.add('on');
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    })
-});
 
 init(); //초기화
 

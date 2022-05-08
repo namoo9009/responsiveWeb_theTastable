@@ -381,7 +381,6 @@ function moveScrollWhelelToUp(thisPage){
 //html load 완료후 함수 초기화, 공통 이벤트리스트 관리
 
 function init(){    //시작
-    loadingStart();
     section[0].classList.add('on');
     getSize();
     mouseoverGnb();

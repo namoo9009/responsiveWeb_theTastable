@@ -1,32 +1,45 @@
-# 반응형 웹 개발하기
-반응형 웹 개발을 익히고 실전 감각을 키우기 위해 실제로 운영 중인 기업 홈페이지 중에서 다양한 효과가 적용된 홈페이지를 직접 정하고 클론코딩하였습니다.
-
-### 개요
-- 사용 기술 : HTML, CSS, banila Javascript
-- 결과물 url : https://namoo9009.github.io/responsiveWeb_theTastable/index
-- 클론코딩 웹 : 더테이스터블 메인 페이지(http://www.thetastable.com/kr/)
+# 더테이스터블
+기업 웹 사이트 제작 숙련도 향상을 위해 더테이스터블의 메인 페이지와 서브 페이지를 클론 코딩하였고, 코드의 효율성 및 가독성 향상을 위해 코드 리팩토링 진행
+- 미리보기 : https://namoo9009.github.io/responsiveWeb_theTastable/index
+- 실제 사이트 : http://www.thetastable.com/kr/
 
 <br/>
 
-### 주안점
-- 실전 감각을 키우기 위한 작업이었기 때문에 제가 배운 기술들을 활용하여 클론코딩하는 사이트와 최대한 똑같이 만들려고 노력했습니다.
+### 작업 기간
+- 2022.03 ~ 2022.05
 
 <br/>
 
-### 문제점
-- 스크롤했을 때 화면이 매끄럽지 못하고 끊기는 느낌으로 넘어간다.
-- media query에서 화면이 분기될때마다 모든 코드를 넣어 중복되는 코드가 많다.
-- css에서 수정사항이 생기면 모든 media query에서 분기된 곳마다 일일이 수정해야되서 비효율적이다. 
+### 사용 언어
+- HTML, CSS, banila Javascript
 
 <br/>
 
+### 주요업무
+<ul>
+    <li>반응형 웹 개발
+        <ul>
+            <li>PC, Tablet, Mobile</li>
+        </ul>
+    </li>
+    <li>웹 표준 준수
+        <ul>
+            <li>웹 접근성 준수</li>
+            <li>HTML/CSS W3C 유효성검사 Pass</li>
+            <li>크로스 브라우징(CSS Vendeor Prefix 적용)</li>
+        </ul>
+    </li>
+    <li>코드 리팩토링
+        <ul>
+            <li>코드 가독성 향상을 위해 HTML, CSS, JS 코드 구조화하여 작성</li>
+            <li>JS에서 중복되는 코드를 함수로 만들어 사용하여 코드 효율성과 재사용성을 높임</li>
+            <li>JS에서 데이터 관리 함수를 만들어 데이터를 저장하였고, 하나의 함수로 데이터를 관리할 수 있어 유지 보수성 개선됨</li>
+        </ul>
+    </li>
+    <li>주요 기술
+        <ul>
+            <li>FlexBox 속성을 사용하여 레이아웃 작성.  순수 CSS와 JS를 사용하여 FullPage, Page RemoteControl, Image SlideShow 등 구현</li>
+        </ul>
+    </li>
+</ul>
 
-
-### 느낀 점
-- Jquery로 작성한 코드를 Javascrip로 변경하면서 많은 시행착오도 있었지만 그 과정에서 Javascript로 DOM을 조작하고 styling 하는 부분에 대한 감을 익힐 수 있어서 좋았습니다. 추가로 수정/보완이 필요한 부분은 좀 더 방법을 찾아보고 구현해 보겠습니다.. 
--  가독성이 좋고 유지보수가 용하도록 코드 Refectoring이 필요하다고 생각되었습니다. 수정사항이 보여 코드를 수정하려고 보니 CSS와 Javascript에서 중복되는 코드가 많아 가독성이 떨어지고 수정할 부분이 생겨도 내용을 찾기가 어려워 수정하기가 어렵다는 문제점이 발생하였습니다. 그래서 다음 프로젝트에서 Refectoring을 적용해 보고 아직 구현하지 못한 부분들을 보완하여 완성도 높은 반응형 웹사이트를 만들어 보겠습니다.
-
-<br/>
-
-### 후속작업
-- 코드 Refectoring 진행, 모든 기능 구현하여 완성도 높이기

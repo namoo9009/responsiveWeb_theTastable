@@ -11,7 +11,7 @@
 <br/>
 
 ### 사용 언어
-- HTML, CSS, banila Javascript
+- HTML, CSS, Javascript
 
 <br/>
 

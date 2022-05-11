@@ -97,6 +97,7 @@ a{text-decoration: none;color: #666;}
 #wrap.hamBtnOn .header_wrap .srch_box button{background-image: url(../image/icon_search.png);background-color: #bbb;}
 #wrap.black .header_wrap .ham_box span,
 #wrap.hamBtnOn .header_wrap .ham_box span{background-color: #666;}
+#wrap.black .header_wrap .ham_box div::after{color: #000;}
 #wrap.black aside,
 #wrap.hamBtnOn aside{color: #666;border-left-color: #ddd;background-color: #fff;}
 #wrap.black aside a,

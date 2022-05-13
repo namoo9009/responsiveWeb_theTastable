@@ -50,14 +50,13 @@ function getSize(){
     con4ScrollTop = section[4].getBoundingClientRect().top + scrollY;
     footerScrollTop = section[5].getBoundingClientRect().top + scrollY;
     footerScrollBottom = section[5].getBoundingClientRect().top + scrollY + section[5].offsetHeight - window.innerHeight ;
-    console.log(brandImgListWidth)
 };
 
 /*-----------------------------------------------------------------*/
 /* loading */
     const loadingStart = setTimeout(() => {
         loading.classList.add('off');
-    }, 1000)
+    }, 1200)
 /*-----------------------------------------------------------------*/
 /*header*/
 
@@ -89,13 +88,11 @@ const nextBtn = document.querySelector('.content3 .next_btn');
 let imgIdx = 0;
 
 function moveSlide(imgIdx) {
-    console.log('함수호출')
     getSize();
     const gap = 30;
     const mobileGap = 40;
     let slideDistance =  gap + brandImgListWidth;
     let mobileSlideDistance = mobileGap + brandImgListWidth;
-    console.log(mobileSlideDistance)
     if(winWidth <= mobileLimit) {
         brandListFrame.style.left = mobileSlideDistance * imgIdx + 'px';
     } else {
@@ -103,7 +100,6 @@ function moveSlide(imgIdx) {
     }
 }
 prevBtn.addEventListener('click', () => {
-    console.log('이전클릭')
     imgIdx = ++imgIdx;
     if(imgIdx > 0) imgIdx = -4;
     if(imgIdx < -4) imgIdx = 0;
@@ -111,7 +107,6 @@ prevBtn.addEventListener('click', () => {
     
 })
 nextBtn.addEventListener('click', () => {
-    console.log('이후클릭')
     imgIdx = --imgIdx;
     if(imgIdx > 0) imgIdx = -4;
     if(imgIdx < -4) imgIdx = 0;
